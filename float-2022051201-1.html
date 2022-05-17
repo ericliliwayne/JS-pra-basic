@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .container{/*如果沒有content，height抓不到高度*/
+            width: 100%;
+            background-color: black;
+            margin: 0 auto;
+        }
+        .col{
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+        }
+        .box1{
+            background-color: lightsteelblue;
+            width: 100%;
+            float: left;
+        }
+        .box2{
+            background-color: lightgreen;
+            width: 30%;
+            float: left;
+            height: 500px;
+            margin-right: 20px;
+        }
+        .box3{
+            background-color: lightpink;
+            width: 30%;
+            float: left;
+            height: 500px;
+        }
+        .boxadd{
+            background-color: lightyellow;
+            width: 30%;
+            float: right;
+            height: 500px;
+        }
+        .box4{
+            background-color: lightsalmon;
+            width: 100%;
+            float: left;
+        }
+        .container::after{
+            content: "";
+            clear: both;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="col box1">box1 header</div>
+        <div class="col box2">box2 aside</div>
+        <div class="col box3">box3 content</div>
+        <div class="col boxadd">box5 new</div>
+        <div class="col box4">box4 footer</div>
+        
+        
+    </div>
+    
+</body>
+</html>

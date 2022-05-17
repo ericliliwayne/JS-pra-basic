@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>JS pra</title>
+</head>
+<body>
+   <script>
+       //prompt('input your name','your name');
+    // let name = "董韋逸";
+    // console.log(name);
+    // console.log('HI '+name);
+    //php
+    //$name
+    //字串相加 "Hello " . $name
+
+    //JS
+    //name
+    //字串相加 "HI " + name
+
+    //練習一
+    // let name = prompt('input your name','your name');
+    // console.log(name);
+    // console.log('HI '+name);
+
+    //練習二
+    // let A = prompt('input number','number');
+    // let B = prompt('input number','number');
+    // console.log(A,B);
+    // result = Number(A)+Number(B);
+    // console.log('總和是: ' +result);
+    //js字串轉數字
+    //字串 和 int 不同的
+    
+    
+    //練習三
+    //判斷數字大小
+    // let A = prompt('input number','number');
+    // let B = prompt('input number','number');
+    // console.log(A,B);
+    // if(Number(A)<Number(B)){
+    //     console.log(A +"小於" +B)
+    // }else if(Number(A)>Number(B)){
+    //     console.log(A+"大於" +B)
+    // }else if(Number(A)==Number(B)){
+    //     console.log(A+"等於" +B)
+    // }else{
+    //     console.log("error");
+    // }
+
+    //練習四
+    // let A = prompt('輸入存錢數量:','number');
+    // let B = prompt('輸入買東西的總價格:','number');
+    // result=Number(A)-Number(B);
+    // if(Number(A)-Number(B)>0){
+    //     alert("餘額" +result +"元")
+    // }else if(Number(A)-Number(B)<0){
+    //     alert("無法扣款")
+    // }else if(Number(A)-Number(B)==0){
+    //     alert("錢剛剛好，餘額為零")
+    // }else{
+    //     alert("金額輸入錯誤，請重新輸入!!")
+    // }
+
+    //練習五 作業
+    let account = prompt('輸入存款數量(請輸入數字):','number');
+    
+    if(isNaN(account)){//先判定 account 輸入的值是否為數字
+        alert("輸入金額為: 「"+account+"」 ,存款資料型態輸入錯誤!!");
+    }else{
+        Number(account);//將字串轉成數字型態
+        let move = prompt('輸入「提款」或「轉帳」:','提款或轉帳');
+        if(move == "提款"){//選擇提款下做的事
+            let takeout = Number(prompt('輸入提領金額:','number'));
+            if(takeout <= account){
+                result = account - takeout;
+                alert("已提領: "+takeout+" 元，"+"餘額剩餘: "+result+" 元。");
+            }else if(takeout > account){
+                alert("帳戶餘額: "+account+" 元，餘額不足，無法提領!!");
+            }else{
+                alert("資料輸入錯誤!!");
+            }
+        }else if(move == "轉帳"){//選擇轉帳下做的事
+            let transfername = prompt('輸入要轉帳的戶頭號碼:','number');
+            let transfer = Number(prompt('輸入轉帳金額:','number'));
+            if(transfer <= account){
+                result = account - transfer;
+                alert("已轉帳給: "+transfername+" ，金額: "+transfer+" 元，餘額剩餘: "+result+" 元。");
+            }else if(transfer > account){
+                alert("帳戶餘額: "+account+" 元，餘額不足，無法轉帳!!");
+            }else{
+                alert("資料輸入錯誤!!");
+            }
+        }else{
+            alert("輸入錯誤!!");//move非輸入 提款 或 轉帳 則顯示錯誤
+        }
+    }
+    
+
+   </script>
+   
+</body>
+</html>
