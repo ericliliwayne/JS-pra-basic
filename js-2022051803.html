@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //練習5~7以function方式來做
+        let mystring = "";
+        function getMoney() {
+            
+            console.log("getMoney");
+            let getMoney = parseInt(prompt('領多少錢 ?',0));
+            console.log('領錢金額 => '+getMoney);
+            if (save>=getMoney) {
+                console.log("成功領錢!");
+                mystring = mystring+"已提領: "+getMoney+" 元，"+"餘額剩餘: "+save+" 元。"+"\n";
+                save = save - getMoney;
+            } else {
+                console.log("餘額不足，本次無法領錢!");
+                alert("餘額不足，本次無法轉帳!");
+            }
+            console.log("最終存款 =>"+save);
+        }
+        function transferMoney() {
+            
+            console.log("transferMoney");
+            let transferID = prompt('轉入帳號 ?',0);
+            console.log('轉入帳號 => '+transferID);
+            let transferMoney = parseInt(prompt('轉多少錢 ?',0));
+            console.log('領錢金額 => '+transferMoney);
+            if (save>=transferMoney) {
+                console.log("成功轉帳!");
+                mystring = mystring+"已提領: "+transferMoney+" 元，"+"餘額剩餘: "+save+" 元。"+"\n";
+                save = save - transferMoney;
+            } else {
+                console.log("餘額不足，本次無法轉帳!");
+            }
+            console.log("最終存款 =>"+save);
+        }
+        function storeMoney() {
+            
+            let storeMOney = parseInt(prompt('存入金額 ?',0));
+            console.log('存入金額 => '+storeMOney);
+            mystring = mystring+"已存入!"+storeMOney+"\n";
+            save = save + storeMOney;
+            console.log("最終存款 =>"+save);
+        }
+        
+        let save = parseInt(prompt('目前存款金額 ?',0));
+        console.log('存款 => '+save);
+        let action = parseInt(prompt('後續動作 1.領錢 2.轉帳 3.存錢?',0));
+        console.log('動作 => '+action);
+        switch (action) {
+        case 1:
+        console.log("領錢中");
+        getMoney();
+            break;
+        case 2:
+        console.log("轉帳中");
+        transferMoney();
+            break;
+
+        case 3:
+        console.log("存錢中");
+        storeMoney()
+        break;
+        default:
+            break;
+    }
+    // let mystring = "";
+    // let say = "";
+    // say = getMoney(say);
+    mystring = mystring + "最終存款 => "+save+"\n";
+    //mystring = "字串1" + "字串2";
+    alert(mystring);
+
+    //無跳脫字元
+    let noN = "string123";
+    noN = noN + noN + noN;
+    alert(noN);
+    //有跳脫字元
+    let yeN = "string456"+"\n";
+    yeN = yeN + yeN + yeN;
+    alert(yeN);
+    </script>
+</body>
+</html>

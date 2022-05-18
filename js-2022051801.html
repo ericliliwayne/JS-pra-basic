@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //練習四
+    // let A = prompt('輸入存錢數量:','number');
+    // let B = prompt('輸入買東西的總價格:','number');
+    // result=Number(A)-Number(B);
+    // if(Number(A)-Number(B)>0){
+    //     alert("餘額" +result +"元")
+    // }else if(Number(A)-Number(B)<0){
+    //     alert("無法扣款")
+    // }else if(Number(A)-Number(B)==0){
+    //     alert("錢剛剛好，餘額為零")
+    // }else{
+    //     alert("金額輸入錯誤，請重新輸入!!")
+    // }
+    //練習五 作業-老師解法 //練習六 alert
+    //1.存款多少
+    let save = parseInt(prompt('目前存款金額 ?',0));
+    console.log('存款 => '+save);
+    //2.後續動作:1.領錢 2.轉帳
+    let action = parseInt(prompt('後續動作 1.領錢 2.轉帳 3.存錢?',0));
+    console.log('動作 => '+action);
+    switch (action) {
+        case 1:
+            console.log("領錢中");
+            let getMoney = parseInt(prompt('領多少錢 ?',0));
+            console.log('領錢金額 => '+getMoney);
+            if (save>=getMoney) {
+                console.log("成功領錢!");
+                save = save - getMoney;
+                alert("已提領: "+getMoney+" 元，"+"餘額剩餘: "+save+" 元。");
+                
+            } else {
+                console.log("餘額不足，本次無法領錢!");
+                alert("餘額不足，本次無法轉帳!");
+            }
+            console.log("最終存款 =>"+save);
+            break;
+        case 2:
+            console.log("轉帳中");
+            let transferID = prompt('轉入帳號 ?',0);
+            console.log('轉入帳號 => '+transferID);
+            let transferMoney = parseInt(prompt('轉多少錢 ?',0));
+            console.log('領錢金額 => '+transferMoney);
+            if (save>=transferMoney) {
+                console.log("成功轉帳!");
+                save = save - transferMoney;
+                alert("已提領: "+transferMoney+" 元，"+"餘額剩餘: "+save+" 元。");
+            } else {
+                console.log("餘額不足，本次無法轉帳!");
+                alert("餘額不足，本次無法轉帳!");
+            }
+            console.log("最終存款 =>"+save);
+
+            break;
+
+        case 3:
+            let storeMOney = parseInt(prompt('存入金額 ?',0));
+            console.log('存入金額 => '+storeMOney);
+            save = save + storeMOney;
+            alert("已存入!"+storeMOney);
+            console.log("最終存款 =>"+save);
+        break;
+        default:
+            break;
+    }
+   
+
+
+    </script>
+</body>
+</html>
