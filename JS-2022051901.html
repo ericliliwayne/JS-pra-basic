@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <style>
+        h1{
+            color: red;
+        }
+        .myClass{
+            color: red;
+        }
+        .blueClass {
+            color: blue;
+        }
+        .queryClass {
+            color:yellow;
+        }
+    </style>
+</head>
+<!-- <div id="test">
+
+</div>
+<div class="myClass">
+    hello myClass1
+</div>
+<div class="myClass">
+    hello myClass2
+</div>
+<div id="query">
+    query id test
+</div> -->
+<div class="queryClass">
+    query id test 1
+</div>
+<div class="queryClass">
+    query id test 2
+</div>
+<input type="text" name="num1" id="num1" placeholder="num1 ?" required>
+
+    <span> + </span>
+
+    <input type="text" name="num2" id="num2" placeholder="num2 ?" required>
+<div id="result">
+    ABC
+</div>
+<br>
+<button type="button" class="btn btn-primary" id="myBtn">bs btn</button>
+
+<body>
+    <script>
+        //練習三 button touch queryClass red
+        const myBtn = document.getElementById('myBtn');
+        const result = document.getElementById('result');
+        const num1Input = document.getElementById('num1');
+        const num2Input = document.getElementById('num2');
+        const queryALLClass = document.querySelectorAll('.queryClass')
+        //元件，放一個事件('click點擊事件，動作要做啥')
+        myBtn.addEventListener('click',function() {
+            
+            for (const key in queryALLClass) {//相當於php foreach
+                console.log(key);
+                if(!isNaN(key)){//非數字的key擋掉
+                    console.log(key);
+                    queryALLClass[key].style.color = "red";
+                }
+                result.innerText = "myBtn OK!";                        
+            }
+            
+            // // alert("myBtn OK!");
+            let num1 = parseInt(num1Input.value);
+            let num2 = parseInt(num2Input.value);
+            console.log(num1 + num2);
+            sum = num1 + num2;
+            result.innerText = `結果為 ${sum}`;
+        });
+
+        // const myClass = document.getElementsByClassName('myClass');
+        // console.log(myClass[0].innerText);
+        // myClass[1].style.color = "blue";
+
+        // const query = document.querySelector('#query');
+        // query.style.color = "green";
+
+        
+        //全部class更換
+        //1.for
+        // for (let i = 0; i < queryALLClass.length; i++) {
+        //     queryALLClass[i].style.color = "red";
+        // }
+        //2.for in
+        
+        
+        // testDiv1.innerText = myBtn;
+        //getElementById抓單個class
+        //getElementsByClassName抓全部class
+        //querySelector抓單個id，要#id
+        //querySelectorALL抓全部class，要.class
+        
+
+
+        // const testDiv = document.getElementById('test');
+        // testDiv.innerText = "add test txt";
+        // testDiv.innerHTML = "<h1>add test txt</h1>";
+        // //CSS變色
+        // const myClass1 = document.getElementById("myClass1")
+        // myClass1.innerHTML = "<h1 style='color:blue'>hello myClass</h1>";
+        // const myClass2 = document.getElementById("myClass2")
+        // myClass2.innerHTML = "hello myClass";
+
+
+
+        // let x = 10;//1.let宣告變數
+        // console.log(testDiv.innerHTML);
+        // console.log(myClass1.innerHTML);
+        // console.log(myClass2.innerHTML);
+        
+        // let student1 = "wayne" ;
+        //     student2 = "amy" ;
+        //     student3 = "john" ;
+        //     student4 = "kerr" ;
+        //     console.log(student1);
+        //     console.log(student2);
+        //     console.log(student3);
+        //     console.log(student4);
+
+        // const y = 20;//2.const宣告常數
+        // //y = 300;const不可被改變
+
+        // var z = 100;//3.宣告變數var 
+
+        
+    </script>
+</body>
+</html>

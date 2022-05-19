@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="fontsize()">fontsize button</button>
+    <button type="button" onclick="myfun()">function button</button>
+    <br><br>
+    <button type="button" onclick="document.getElementById('demo').innerHTML = 'Hello JavaScript!'">my button</button>
+    <div id="demo">
+        0123456789
+    </div>
+    <br><br>
+    <div id="result">
+        9876543210
+    </div>
+    <br><br>
+    <button type="button" id="myBtn">my button</button>
+
+    <script>
+        //object PHP Associative Arrays
+        //array
+        let myArr = [2,4,6,8,10];
+        console.log('myArr',myArr);
+        let student = {//object
+            name : "wayne",
+            age : 28,
+            location : "TAIPEI",
+        };
+        console.log('student',student);
+
+        const result = document.getElementById('result');
+        const myBtn = document.getElementById('myBtn');
+        myBtn.addEventListener('click',function () {
+            result.innerText = `Hello ${student.name} age: ${student.age} from: ${student.location}`;
+        });
+
+        // let x = "testxxx";//字串相加
+        // x = x + "123" ;
+        // console.log(x);
+
+        // let y = 'textyyy';
+        // y += "456";
+        // console.log(y);
+
+        // let vs var，let要宣告，var不須宣告
+        // 1.
+        // let new es6 2015 
+        // var old
+
+        // 2.Block Scope
+        // console.log(x);
+        
+        // {
+        //     var x = "test";
+        //     console.log(x);
+        // }
+        
+        // console.log(x);
+
+        // 不要全域變數 global variable
+
+        //js type
+        //typeof
+        function fontsize() {//fontsize測試使用
+            let fontsize = document.getElementById('demo')
+            fontsize.style.fontSize = "80px";
+        }
+        function myfun() {//myfun測試使用
+            alert('myfunction OK!');
+        }
+    </script>
+</body>
+</html>
